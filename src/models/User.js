@@ -3,8 +3,7 @@ const bcrypt = require('bcryptjs');
 
 const UserSchema = new Schema({
   name: {type: String, required: [true, 'El nombre es necesario']},
-  appat: {type: String, required: [true, 'El apellido paterno es necesario']},
-  apmat: {type: String, required: [true, 'El apellido materno es necesario']},
+  appe: {type: String, required: [true, 'Apellido necesario']},
   email: {type: String, required: [true, 'El email es necesario'], unique: true},
   username: {type: String, required: [true, 'El nombre de usuario es necesario'], unique: true},
   password: {type: String, required: [true, 'El password es necesario']}

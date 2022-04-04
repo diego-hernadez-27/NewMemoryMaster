@@ -8,6 +8,7 @@ const passport = require('passport');
 //Inicializaciones
 const app = express();
 require('./config/passport');
+app.use(flash());
 
 //Configuraciones
 app.set('port', process.env.PORT || 4000);
@@ -32,6 +33,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Variables Globales
+/*app.use((req, res, next) =>{
+  res.locals.User = req.User || null;
+})*/
 
 //Routes
 app.use(require('./routes/index.routes'));

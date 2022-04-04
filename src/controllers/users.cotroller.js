@@ -16,7 +16,7 @@ usersCtrl.signin = passport.authenticate('local', {
 
 usersCtrl.register = async (req, res) => {
   //const errors = [];
-  const {name, appat, apmat, email, username, password} = req.body;
+  const {name, appe, email, username, password} = req.body;
   /*if(password.length < 8){
     errors.push({text: 'La contrseña debe tener minimo 8 caracteres.'});
   }
@@ -45,19 +45,26 @@ usersCtrl.register = async (req, res) => {
       //Poner una alguna alerta de que el usuario esta repetido, ya me dio huevita
       console.log('usuario repetido');
       res.redirect('/login');
-    }else {
-      const newUser = new User({name, appat, apmat, email, username, password});
+    }else{
+      const nameUser = await User.findOne({username: username});
+      if (nameUser){
+        console.log('usuario repetido');
+        res.redirect('/login');
+      }else{
+      const newUser = new User({name, appe, email, username, password});
       newUser.password = await newUser.encryptPassword(password);
       await newUser.save();
       //Escribir un mensaje de registro satisfactorio, porfas de usuario
       console.log('registro satisfactorio');
       res.redirect('/login');
+      }
     }
-  //}
 }
 
 usersCtrl.logout = (req, res) => {
-  res.send('logout');
+  req.logout();
+  console.log('Se cerro la sesión');
+  res.redirect('/login');
 }
 
 module.exports = usersCtrl;

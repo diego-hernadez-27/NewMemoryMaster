@@ -6,7 +6,7 @@ const User = require('../models/User');
 passport.use(new LocalStrategy({
   usernameField: 'username',
   passewordField: 'password'
-}, async (email, password, done) => {
+}, async (username, password, done) => {
 
   //Confirmar si coinciden los nombres de usuario
   const user = await User.findOne({username})
@@ -14,7 +14,7 @@ passport.use(new LocalStrategy({
     return done(null, false, { message: 'Not User Found'});
   } else{
     //Coincidencia de contraseñaf
-    const match = await User.matchPassword(password);
+    const match = await user.matchPassword(password);
     if(match) {
       return done(null, user);
     }else{
@@ -29,7 +29,7 @@ passport.serializeUser((user, done) =>{
   done(null, user.id);
 });
 
-passport.deserializeUser((id, user) =>{
+passport.deserializeUser((id, done) =>{
   User.findById(id, (err, user) =>{
     done(err, user);
   })
