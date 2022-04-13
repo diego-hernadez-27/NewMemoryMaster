@@ -6,14 +6,22 @@
           <form action="/signin" method="POST" class="sign-in-form">
             <h2 class="title">Inicio de sesión</h2>
             <!--Username-->
-            <div class="input-field">
+            <div class="formulario__grupo" id="grupo__username">
+              <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="text" placeholder="Nombre de usuario" name="username" id="username" required/>
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>
+              </div>
+              <p class="formulario__input-error"></p>
             </div>
             <!--Password-->
-            <div class="input-field">
+            <div class="formulario__grupo" id="grupo__password">
+              <div class="input-field">
               <i class="fas fa-lock"></i>
               <input type="password" placeholder="Contraseña" name="password" id="password" required/>
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>
+              </div>
+              <p class="formulario__input-error"></p>
             </div>
             <div class='cuerpo'>
               <!-- Sentencia para abrir el Aviso de Privacidad -->
@@ -24,14 +32,14 @@
             </button>
           </form>
           <!--Formulario de registrar-->
-          <form action="/register" method="POST" class="sign-up-form">
+          <form action="/register" method="POST" class="sign-up-form" id="registrarse">
             <h2 class="title">Registrarse</h2>
             <!--Nombre(s)-->
             <div class="formulario__grupo" id="grupo__name">
               <div class="input-field">
                 <i class="fas fa-user"></i>
                 <input type="text" placeholder="Nombre/s" name="name" id="name" required/>
-                <i class="form__validacion-estado fas fa-times-circle"></i>
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
               </div>
               <p class="formulario__input-error"></p>
             </div>
@@ -40,7 +48,7 @@
               <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="text" placeholder="Apellido/s" name="appe" id="appe" required/>
-              <i class="form__validacion-estado fas fa-times-circle"></i>
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>
               </div>
               <p class="formulario__input-error"></p>
             </div>
@@ -49,7 +57,7 @@
               <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="email" placeholder="Correo" name="email" id="email" required/>
-              <i class="form__validacion-estado fas fa-times-circle"></i>
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>
               </div>
               <p class="formulario__input-error"></p>
             </div>
@@ -58,7 +66,7 @@
               <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="text" placeholder="Nombre de usuario" name="username" id="username" required/>
-              <i class="form__validacion-estado fas fa-times-circle"></i>
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>
               </div>
               <p class="formulario__input-error"></p>
             </div>
@@ -67,7 +75,7 @@
               <div class="input-field">
               <i class="fas fa-lock"></i>
               <input type="password" placeholder="Contraseña" name="password" id="password" required/>
-              <i class="form__validacion-estado fas fa-times-circle"></i>
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>
               </div>
               <p class="formulario__input-error"></p>
             </div>
@@ -78,7 +86,11 @@
                 Acepto los terminos y condiciones
               </label>
             </div>
-            <button class="btn">
+            <br>
+            <div class="formulario__mensaje" id="formulario__mensaje">
+              <p><i class="fas fa-exclamation-circle"><b>Error: El formulario no se ha llenado correctamente</b></i></p>
+            </div>
+            <button type="submit" class="btn">
               SIGN UP
             </button>
           </form>
@@ -105,3 +117,4 @@
       </div>
     </div>
 <script src="/JS/accionesLogin.js"></script>
+<script src="/JS/formulario.js"></script>
