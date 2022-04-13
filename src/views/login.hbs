@@ -8,12 +8,12 @@
             <!--Username-->
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Nombre de usuario" name="username"  required/>
+              <input type="text" placeholder="Nombre de usuario" name="username" id="username" required/>
             </div>
             <!--Password-->
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Contraseña" name="password" required/>
+              <input type="password" placeholder="Contraseña" name="password" id="password" required/>
             </div>
             <div class='cuerpo'>
               <!-- Sentencia para abrir el Aviso de Privacidad -->
@@ -27,29 +27,56 @@
           <form action="/register" method="POST" class="sign-up-form">
             <h2 class="title">Registrarse</h2>
             <!--Nombre(s)-->
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Nombre/s" name="name" required/>
+            <div class="formulario__grupo" id="grupo__name">
+              <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Nombre/s" name="name" id="name" required/>
+                <i class="form__validacion-estado fas fa-times-circle"></i>
+              </div>
+              <p class="formulario__input-error"></p>
             </div>
             <!--Apellido(s)-->
-            <div class="input-field">
+            <div class="formulario__grupo" id="grupo__appe">
+              <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Apellido/s" name="appe"/>
+              <input type="text" placeholder="Apellido/s" name="appe" id="appe" required/>
+              <i class="form__validacion-estado fas fa-times-circle"></i>
+              </div>
+              <p class="formulario__input-error"></p>
             </div>
             <!--Email-->
-            <div class="input-field">
+            <div class="formulario__grupo" id="grupo__email">
+              <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="email" placeholder="Correo" name="email" required/>
+              <input type="email" placeholder="Correo" name="email" id="email" required/>
+              <i class="form__validacion-estado fas fa-times-circle"></i>
+              </div>
+              <p class="formulario__input-error"></p>
             </div>
             <!--User-->
-            <div class="input-field">
+            <div class="formulario__grupo" id="grupo__username">
+              <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Nombre de usuario" name="username" required/>
+              <input type="text" placeholder="Nombre de usuario" name="username" id="username" required/>
+              <i class="form__validacion-estado fas fa-times-circle"></i>
+              </div>
+              <p class="formulario__input-error"></p>
             </div>
             <!--Password-->
-            <div class="input-field">
+            <div class="formulario__grupo" id="grupo__password">
+              <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Contraseña" name="password" required/>
+              <input type="password" placeholder="Contraseña" name="password" id="password" required/>
+              <i class="form__validacion-estado fas fa-times-circle"></i>
+              </div>
+              <p class="formulario__input-error"></p>
+            </div>
+            <!--Terminos  y condiciones-->
+            <div class="formulario__grupo" id="grupo__terminos">
+              <label>
+                <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                Acepto los terminos y condiciones
+              </label>
             </div>
             <button class="btn">
               SIGN UP
