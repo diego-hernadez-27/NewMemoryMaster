@@ -70,6 +70,7 @@ form.sign-in-form {
 
 .formulario__input-error-activo {
   display: block;
+  text-align: center;
 }
 
 .formulario__validacion-estado{
@@ -123,6 +124,7 @@ form.sign-in-form {
 
 .input-field {
   max-width: 380px;
+  min-width: 380px;
   width: 100%;
   background-color: #f0f0f0;
   margin: 10px 0;
