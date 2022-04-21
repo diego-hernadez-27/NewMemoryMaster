@@ -3,7 +3,9 @@ const router = Router();
 
 const { renderLoginForm, signin, register, logout } = require('../controllers/users.cotroller.js')
 
-router.get('/login', renderLoginForm);
+const{isnotAuthenticated} = require('../helpers/auth');
+
+router.get('/login', isnotAuthenticated, renderLoginForm);
 
 router.post('/signin', signin);
 

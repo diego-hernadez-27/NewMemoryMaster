@@ -11,6 +11,11 @@ input {
     font-family: 'Coming Soon', cursive;
 }
 
+b {
+  font-family: 'Coming Soon', cursive;
+  margin-top: 5px;
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -68,6 +73,10 @@ form.sign-in-form {
   display: none;
 }
 
+.formulario__input-error{
+  max-width: 380px;
+}
+
 .formulario__input-error-activo {
   display: block;
   text-align: center;
@@ -86,12 +95,17 @@ form.sign-in-form {
 }
 
 .formulario__mensaje{
+  text-align: center;
   height: 45px;
   line-height: 45px;
   background: #F66060;
   padding: 0 15px;
   border-radius: 10px;
   display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
 }
 
 /*Estilos para validaciones*/
@@ -151,6 +165,7 @@ form.sign-in-form {
   line-height: 1;
   font-weight: 600;
   font-size: 1.1rem;
+  margin-right: 30px;
   color: #333;
 }
 

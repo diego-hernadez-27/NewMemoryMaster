@@ -9,4 +9,13 @@ helpers.isAuthenticated = (req, res, next) => {
 
 }
 
+helpers.isnotAuthenticated = (req, res, next) => {
+  if(req.isAuthenticated()){
+
+      res.redirect('/menu');
+  }
+  return next();
+
+}
+
 module.exports = helpers;
