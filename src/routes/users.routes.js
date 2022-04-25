@@ -3,14 +3,14 @@ const router = Router();
 
 const { renderLoginForm, signin, register, logout } = require('../controllers/users.cotroller.js')
 
-const{isnotAuthenticated} = require('../helpers/auth');
+const{isnotAuthenticated, isAuthenticated} = require('../helpers/auth');
 
 router.get('/login', isnotAuthenticated, renderLoginForm);
 
-router.post('/signin', signin);
+router.post('/signin', isnotAuthenticated, signin);
 
-router.post('/register', register);
+router.post('/register', isnotAuthenticated, register);
 
-router.get('/logout', logout);
+router.get('/logout', isAuthenticated, logout);
 
 module.exports = router;
