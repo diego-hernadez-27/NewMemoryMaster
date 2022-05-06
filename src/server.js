@@ -40,6 +40,7 @@ app.use(passport.session());
 //Routes
 app.use(require('./routes/index.routes'));
 app.use(require('./routes/users.routes'));
+app.use(require('./routes/games.routes'));
 
 //Archivos Estaticos
 app.use(express.static(path.join(__dirname, 'public')));
