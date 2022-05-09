@@ -16,4 +16,40 @@ gamesCtrl.renderCodMensajes = ('/games/auditiva/CodMensajes/adivinando', (req, r
   res.render('games/auditiva/CodMensajes/adivinando')
 });
 
+gamesCtrl.renderInverBajo = ('/games/visual/PalabrasInvertidas/inverbajo', (req, res) => {
+  res.render('games/visual/PalabrasInvertidas/inverbajo')
+});
+
+gamesCtrl.renderInverMedio = ('/games/visual/PalabrasInvertidas/invermedio', (req, res) => {
+  res.render('games/visual/PalabrasInvertidas/invermedio')
+});
+
+gamesCtrl.renderInverAlto = ('/games/visual/PalabrasInvertidas/inveralto', (req, res) => {
+  res.render('games/visual/PalabrasInvertidas/inveralto')
+});
+
+gamesCtrl.renderSodBajo = ('/games/visual/Sodoku/sodindex', (req, res) => {
+  res.render('games/visual/Sodoku/sodindex')
+});
+
+gamesCtrl.renderSodMedio = ('/games/visual/Sodoku/sodmedio', (req, res) => {
+  res.render('games/visual/Sodoku/sodmedio')
+});
+
+gamesCtrl.renderSodAlto = ('/games/visual/Sodoku/sodalto', (req, res) => {
+  res.render('games/visual/Sodoku/sodalto')
+});
+
+gamesCtrl.renderHexBajo = ('/games/muscular/Hexamano/hexbajo', (req, res) => {
+  res.render('games/muscular/Hexamano/hexbajo')
+});
+
+gamesCtrl.renderHexMedio = ('/games/muscular/Hexamano/hexmedio', (req, res) => {
+  res.render('games/muscular/Hexamano/hexmedio')
+});
+
+gamesCtrl.renderHexDificil = ('/games/muscular/Hexamano/hexdificil', (req, res) => {
+  res.render('games/muscular/Hexamano/hexdificil')
+});
+
 module.exports = gamesCtrl;

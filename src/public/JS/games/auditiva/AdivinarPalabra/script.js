@@ -38,7 +38,7 @@ $(function()
 	var imagenes = function(tags)
 	{
     	//Cargador del carrusel...
-    	owl.data('owlCarousel').addItem("<img src = '/IMG/games/loading.gif' border = '0' class = 'imgCarrusel'>");
+    	owl.data('owlCarousel').addItem("<img src = '../../../../../IMG/games/loading.gif' border = '0' class = 'imgCarrusel'>");
 		$.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
 	    {
 	        tags: tags,
@@ -261,7 +261,7 @@ $(function()
 	    swal({
 	    			title		: 	"Pista",
 	    			text 		: 	palabras[numPalabra].pista,
-	    			imageUrl	: 	"/IMG/games/pista.png"
+	    			imageUrl	: 	"../../../../../IMG/games/pista.png"
 			});
 	});
 });
