@@ -52,4 +52,16 @@ gamesCtrl.renderHexDificil = ('/games/muscular/Hexamano/hexdificil', (req, res) 
   res.render('games/muscular/Hexamano/hexdificil')
 });
 
+gamesCtrl.renderSimonBajo = ('/games/visual/Simon/simonbajo', (req, res) => {
+  res.render('games/visual/Simon/simonbajo')
+});
+
+gamesCtrl.renderSimonMedio = ('/games/visual/Simon/simonmedio', (req, res) => {
+  res.render('games/visual/Simon/simonmedio')
+});
+
+gamesCtrl.renderSimonDificil = ('/games/visual/Simon/simondificil', (req, res) => {
+  res.render('games/visual/Simon/simondificil')
+});
+
 module.exports = gamesCtrl;

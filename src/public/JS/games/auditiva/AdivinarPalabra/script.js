@@ -31,14 +31,14 @@ $(function()
 	//Para cargar los audios del juego...
 	for(var audio = 0; audio < audios.length; audio++)
 	{
-		createjs.Sound.registerSound("sounds/" + audios[audio].sonido, audios[audio].label);
+		createjs.Sound.registerSound("/JS/games/auditiva/AdivinarPalabra/sounds/" + audios[audio].sonido, audios[audio].label);
 	}
 
 	//Traer las imágenes de flickr, de acuerdo a los tags enviados...
 	var imagenes = function(tags)
 	{
     	//Cargador del carrusel...
-    	owl.data('owlCarousel').addItem("<img src = '../../../../../IMG/games/loading.gif' border = '0' class = 'imgCarrusel'>");
+    	owl.data('owlCarousel').addItem("<img src = '/IMG/games/loading.gif' border = '0' class = 'imgCarrusel'>");
 		$.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
 	    {
 	        tags: tags,
@@ -62,7 +62,7 @@ $(function()
 	var cargarJson = function()
 	{
 		var txtOpciones = "";
-		$.getJSON( "./palabras.json", function(data)
+		$.getJSON( "/JS/games/auditiva/AdivinarPalabra/palabras.json", function(data)
 		{
 			palabras = data;
 			//Crear los elementos donde se pondrán las palabras a adivinar...

@@ -62,7 +62,7 @@ body{
 }
 
 .banner{
-    display: block;
+    display: flex;
 }
 
 .banner_img{

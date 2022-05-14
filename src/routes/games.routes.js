@@ -2,8 +2,8 @@ const { Router } = require('express');
 const router = Router();
 
 const { renderRutbajo, renderRutmedio, renderRutdificil, renderCodMensajes, renderInverBajo, renderInverMedio,
-renderInverAlto, renderSodBajo, renderSodMedio, renderSodAlto, renderHexBajo, renderHexMedio, renderHexDificil
-} = require('../controllers/games.controller')
+renderInverAlto, renderSodBajo, renderSodMedio, renderSodAlto, renderHexBajo, renderHexMedio, renderHexDificil,
+renderSimonBajo, renderSimonMedio, renderSimonDificil} = require('../controllers/games.controller')
 
 const{isAuthenticated} = require('../helpers/auth');
 
@@ -32,5 +32,11 @@ router.get('/games/muscular/Hexamano/hexbajo', isAuthenticated, renderHexBajo);
 router.get('/games/muscular/Hexamano/hexmedio', isAuthenticated, renderHexMedio);
 
 router.get('/games/muscular/Hexamano/hexdificil', isAuthenticated, renderHexDificil);
+
+router.get('/games/visual/Simon/simonbajo', isAuthenticated, renderSimonBajo);
+
+router.get('/games/visual/Simon/simonmedio', isAuthenticated, renderSimonMedio);
+
+router.get('/games/visual/Simon/simondificil', isAuthenticated, renderSimonDificil);
 
 module.exports = router;
