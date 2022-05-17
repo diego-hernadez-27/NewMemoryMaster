@@ -3,15 +3,11 @@ const inputs = document.querySelectorAll('#registrarse input');
 
 const expresiones = {
 	username: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-	name: /^[a-zzA-ZÀ-ÿ\s]{1,20}$/, // Letras y espacios, pueden llevar acentos.
-  appe: /^[a-zA-ZÀ-ÿ\s]{1,30}$/, // Letras y espacios, pueden llevar acentos.
 	password: /^.{8,32}$/, // 8 a 32 digitos.
 	email: /^[a-z0-9_.+-]+@[a-z0-9-]+\.[a-z0-9-.]+$/
 }
 
 const campos = {
-	name: false,
-	appe: false,
 	email: false,
 	username: false,
 	password: false
@@ -19,12 +15,6 @@ const campos = {
 
 const validarFormulario = (e) => {
   switch (e.target.name) {
-		case "name":
-			validarCampo(expresiones.name, e.target, 'name');
-		break;
-		case "appe":
-			validarCampo(expresiones.appe, e.target, 'appe');
-		break;
 		case "email":
 			validarCampo(expresiones.email, e.target, 'email');
 		break;
@@ -63,7 +53,7 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit', (e) => {
   e.preventDefault();
 
-	if(campos.name && campos.appe && campos.password && campos.email && campos.username && terminos.checked){
+	if(campos.password && campos.email && campos.username){
 		formulario.submit();
 		document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {

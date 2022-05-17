@@ -4,7 +4,7 @@ const router = Router();
 const { renderIndex, renderMenu, renderPerfil, renderEstresado, renderTipoDeMemoria, renderNivelesEcoica,
 renderNivelesEconica, renderNivelesMuscular} = require('../controllers/index.controller')
 
-const{isAuthenticated, isnotAuthenticated} = require('../helpers/auth');
+const { isAuthenticated, isnotAuthenticated } = require('../helpers/auth');
 
 router.get('/', isnotAuthenticated, renderIndex);
 

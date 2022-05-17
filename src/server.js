@@ -4,9 +4,11 @@ const path = require('path');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+const inStup = require('./libs/initialSetup')
 
 //Inicializaciones
 const app = express();
+inStup.createRoles();
 require('./config/passport');
 app.use(flash());
 

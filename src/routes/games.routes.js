@@ -5,7 +5,7 @@ const { renderRutbajo, renderRutmedio, renderRutdificil, renderCodMensajes, rend
 renderInverAlto, renderSodBajo, renderSodMedio, renderSodAlto, renderHexBajo, renderHexMedio, renderHexDificil,
 renderSimonBajo, renderSimonMedio, renderSimonDificil} = require('../controllers/games.controller')
 
-const{isAuthenticated} = require('../helpers/auth');
+const { isAuthenticated } = require('../helpers/auth');
 
 router.get('/games/auditiva/RepetirPalabra/Rutbajo', isAuthenticated, renderRutbajo);
 
