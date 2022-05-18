@@ -5,10 +5,15 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const inStup = require('./libs/initialSetup')
+const cors = require('cors')
 
 //Inicializaciones
 const app = express();
 inStup.createRoles();
+/*onst corsOptions = {
+  origin: "http://localhost:4000",
+};
+app.use(cors(corsOptions));*/
 require('./config/passport');
 app.use(flash());
 

@@ -113,4 +113,8 @@ usersCtrl.adminregister = async (req, res) => {
   }
 }
 
+usersCtrl.renderTabUser = ('/tablausers', (req, res) => {
+  res.render('tablausers')
+});
+
 module.exports = usersCtrl;

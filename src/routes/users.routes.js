@@ -1,7 +1,8 @@
 const { Router } = require('express');
 const router = Router();
 
-const { renderLoginForm, signin, register, logout, renderRegisterAdmin, adminregister } = require('../controllers/users.cotroller.js')
+const { renderLoginForm, signin, register, logout, renderRegisterAdmin, adminregister,
+        renderTabUser } = require('../controllers/users.cotroller.js')
 
 const { isnotAuthenticated, isAuthenticated } = require('../helpers/auth');
 
@@ -17,5 +18,6 @@ router.get('/registeradmin', isnotAuthenticated, renderRegisterAdmin);
 
 router.post('/adminregister', isnotAuthenticated, adminregister);
 
+router.post('/tablausers', isAuthenticated, renderTabUser);
 
 module.exports = router;
