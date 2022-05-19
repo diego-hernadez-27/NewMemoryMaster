@@ -5,12 +5,13 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const inStup = require('./libs/initialSetup')
-const cors = require('cors')
+const Handlebars = require('handlebars')
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
 //Inicializaciones
 const app = express();
 inStup.createRoles();
-/*onst corsOptions = {
+/*const corsOptions = {
   origin: "http://localhost:4000",
 };
 app.use(cors(corsOptions));*/
@@ -24,7 +25,8 @@ app.engine('.hbs', exphbs.engine({
   defaultLayout: 'main',
   layoutsDir: path.join(app.get('views'), 'layouts'),
   partialsDir: path.join(app.get('views'), 'partials'),
-  extname: '.hbs'
+  extname: '.hbs',
+  handlebars: allowInsecurePrototypeAccess(Handlebars)
 }));
 app.set('view engine', 'hbs');
 
@@ -38,6 +40,11 @@ app.use(session({
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use((req, res, next) => {
+  app.locals.user = req.user;
+  next();
+});
 
 //Variables Globales
 /*app.use((req, res, next) =>{

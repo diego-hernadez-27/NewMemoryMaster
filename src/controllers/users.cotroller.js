@@ -117,4 +117,28 @@ usersCtrl.renderTabUser = ('/tablausers', (req, res) => {
   res.render('tablausers')
 });
 
+usersCtrl.renderEditPerfil = ('/editarperfil', (req, res) => {
+  res.render('editarperfil')
+});
+
+usersCtrl.actualizar = async (req, res) => {
+
+  const {name, appe, email, username, id} = req.body;
+
+  User.findByIdAndUpdate(id, {name, appe, email, username}, (error, user) =>{
+    if(error){
+        return res.redirect('/editarperfil')
+    }
+    res.redirect('/perfil')
+  });
+
+  /*const savedUser = await updateUser.save();
+  console.log(savedUser)
+
+  //Escribir un mensaje de registro satisfactorio, porfas de usuario
+  console.log('actualización satisfactoria');
+  res.redirect('/perfil');*/
+
+}
+
 module.exports = usersCtrl;

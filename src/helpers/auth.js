@@ -21,7 +21,7 @@ helpers.isnotAuthenticated = (req, res, next) => {
 
 }
 
-helpers.verifyToken = async (req, res, next) => {
+/*helpers.verifyToken = async (req, res, next) => {
   let token = req.headers["x-access-token"];
 
   if (!token) return console.log("No hay token." );
@@ -39,7 +39,7 @@ helpers.verifyToken = async (req, res, next) => {
   }
 };
 
-/*helpers.isUser = async (req, res, next) => {
+helpers.isUser = async (req, res, next) => {
   try {
     const user = await User.findById(req.userId);
     const roles = await Role.find({ _id: { $in: user.roles } });

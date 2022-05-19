@@ -313,23 +313,26 @@ body {
         </div>
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-bio">
-                <h3 class="titulo">¡Bienvenidos al perfil de Usuario!</h3>
+                <h3 class="titulo">¡Bienvenido {{user.username}}!</h3>
                 <p class="texto">Mis avances más notables han sido en juegos de memoria muscular, ¡pueden creerlo!
                     No puedo esperar a subir aún más mi puntaje :D
                 </p>
             </div>
             <div class="perfil-usuario-footer">
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-user-check"></i>Nombre de usuario: Technet_5004:</li>
+                    <li><i class="icono fas fa-user-check"></i> Nombre: {{user.name}} {{user.appe}}</li>
+                    <li><i class="icono fas fa-envelope"></i> Correo: {{user.email}}</li>
                 </ul>
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-map-signs"></i> Puntaje: 413</li>
+                    <li><i class="icono fas fa-map-signs"></i> Puntaje: 0</li>
+                    <li><i class="icono fas fa-star"></i> Nivel: 0</li>
                 </ul>
             </div>
         </div>
     </section>
     <br>
-    <center><input type="submit" value="Editar" class="btn solid"/> <a href="/logout" id="close"><input type="submit" value="Cerrar sesión" class="btn solid" id="btn_close" ></a></center>
+    <center><a href="/editarperfil"><input type="submit" value="Editar" class="btn solid"/></a> <a href="/logout" id="close"><input type="submit" value="Cerrar sesión" class="btn solid" id="btn_close" ></a></center>
+    <center><a href="/menu" class="btn solid" id="close">VOLVER</a></center>
     <br>
     <!--Inicio del div para la animacion de barra de carga-->
     <div class="loader" >
