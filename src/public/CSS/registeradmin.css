@@ -15,6 +15,10 @@ input {
     font-family: 'Coming Soon', cursive;
 }
 
+.password{
+  padding-right: 22px;
+}
+
 form {
     display: flex;
     align-items: center;
