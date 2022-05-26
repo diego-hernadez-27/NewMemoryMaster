@@ -54,11 +54,11 @@ usersCtrl.register = async (req, res) => {
     const savedUser = await newUser.save();
     console.log(savedUser)
 
-    const token = jwt.sign({id: savedUser._id}, `${SECRET}`, {
+    /*const token = jwt.sign({id: savedUser._id}, `${SECRET}`, {
       expiresIn: 86400
     })
 
-    console.log({token});
+    console.log({token});*/
 
     //Escribir un mensaje de registro satisfactorio, porfas de usuario
     console.log('registro satisfactorio');
@@ -101,11 +101,11 @@ usersCtrl.adminregister = async (req, res) => {
     const savedUser = await newUser.save();
     console.log(savedUser)
 
-    const token = jwt.sign({id: savedUser._id}, `${SECRET}`, {
+    /*const token = jwt.sign({id: savedUser._id}, `${SECRET}`, {
       expiresIn: 86400
     })
 
-    console.log({token});
+    console.log({token});*/
 
     //Escribir un mensaje de registro satisfactorio, porfas de usuario
     console.log('registro satisfactorio');
@@ -132,13 +132,40 @@ usersCtrl.actualizar = async (req, res) => {
     res.redirect('/perfil')
   });
 
-  /*const savedUser = await updateUser.save();
-  console.log(savedUser)
-
-  //Escribir un mensaje de registro satisfactorio, porfas de usuario
-  console.log('actualización satisfactoria');
-  res.redirect('/perfil');*/
-
 }
+
+usersCtrl.findUser = async (req, res) => {
+  const usuarios = await User.find({roles:"62813ced2a6db0a60ee34690"});
+  res.render('tablausers', { usuarios });
+}
+
+usersCtrl.edituser = (req,res)=>{
+    const id = req.body.id_editar
+    const name = req.body.nombre_editar
+    const appe = req.body.apellido_editar
+    const username = req.body.usuario_editar
+    const email = req.body.edad_editar
+    User.findByIdAndUpdate(id, {name, appe, email, username}, (error, usuario)=>{
+        if(error){
+            return res.status(500).json({
+                message: 'Error actualizando al Usuario'
+            })
+        }
+        res.redirect('/findUser')
+    })
+}
+
+usersCtrl.deleteuser = (req, res) =>{
+  const id = req.params.id
+    User.findByIdAndRemove(id, (error, usuario)=>{
+      if(error){
+          return res.status(500).json({
+                message: 'Error eliminando al Usuario'
+          })
+      }
+      res.redirect('/findUser')
+    })
+}
+
 
 module.exports = usersCtrl;

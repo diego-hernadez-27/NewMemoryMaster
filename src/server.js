@@ -7,14 +7,13 @@ const passport = require('passport');
 const inStup = require('./libs/initialSetup')
 const Handlebars = require('handlebars')
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
+//const cookieParser = require('cookie-parser')
+
 
 //Inicializaciones
 const app = express();
 inStup.createRoles();
-/*const corsOptions = {
-  origin: "http://localhost:4000",
-};
-app.use(cors(corsOptions));*/
+//app.use(cookieParser());
 require('./config/passport');
 app.use(flash());
 
@@ -41,15 +40,11 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+//Variables Globales
 app.use((req, res, next) => {
   app.locals.user = req.user;
   next();
 });
-
-//Variables Globales
-/*app.use((req, res, next) =>{
-  res.locals.User = req.User || null;
-})*/
 
 //Routes
 app.use(require('./routes/index.routes'));

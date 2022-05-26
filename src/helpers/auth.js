@@ -21,10 +21,10 @@ helpers.isnotAuthenticated = (req, res, next) => {
 
 }
 
-/*helpers.verifyToken = async (req, res, next) => {
+helpers.prueba = async (req, res) => {
   let token = req.headers["x-access-token"];
 
-  if (!token) return console.log("No hay token." );
+  if (!token) return console.log("No hay token.");
 
   try {
     const decoded = jwt.verify(token, config.SECRET);
@@ -38,7 +38,7 @@ helpers.isnotAuthenticated = (req, res, next) => {
     return res.status(401).json({ message: "Unauthorized!" });
   }
 };
-
+/*
 helpers.isUser = async (req, res, next) => {
   try {
     const user = await User.findById(req.userId);
