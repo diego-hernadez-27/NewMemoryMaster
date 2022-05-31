@@ -1,7 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-//const jwt = require('jsonwebtoken');
-//const { SECRET, EXPIRE_TIME, COOKIE_EXPIRES } = process.env;
+const jwt = require('jsonwebtoken');
+const { SECRET } = process.env;
 
 const User = require('../models/User');
 
@@ -18,17 +18,13 @@ passport.use(new LocalStrategy({
     //Coincidencia de contraseña
     const match = await user.matchPassword(password);
     if(match) {
-      /*const id = user.id;
-      const token = jwt.sign({id:id}, `${SECRET}`, {
-        expiresIn: `${EXPIRE_TIME}`
-      })
-      console.log("Token: " + token + " para el usuario: " + user.username);
+      /*const options = {
+        jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+        secretOrKey: `${SECRET}`,
+        ignoreExpiration: true
+      };*/
 
-      const cookieOptions = {
-        expires: new Date(Date.now()+`${COOKIE_EXPIRES}` * 24 * 60 * 60 * 1000),
-        httpOnly: true
-      }
-      res.cookie('jwt', token, cookieOptions)*/
+      //console.log({token});
 
       return done(null, user);
     }else{

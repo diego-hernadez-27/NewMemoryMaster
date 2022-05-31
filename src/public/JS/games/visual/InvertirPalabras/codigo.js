@@ -1,6 +1,6 @@
 var intentos = 3;
 var cadena = 'capas';
-
+const gamesCtrl = require('../controllers/games.controller');
 
 function invertir(){
 
@@ -26,6 +26,7 @@ function comprobar(){
 
     var palabra_a_comprobar = document.getElementById('palabra_1');
     if (palabra_a_comprobar.value == cadena){
+        gamesCtrl.subirScore();
         alert("Felicidades \n Lo lograste en " + ((3 - intentos)+1) + " intento(s).");
         window.location.reload();
     } else {

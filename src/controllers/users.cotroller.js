@@ -23,6 +23,8 @@ usersCtrl.signin = passport.authenticate('local', {
 usersCtrl.register = async (req, res) => {
   //const errors = [];
   const {name, appe, email, username, password, roles} = req.body;
+  const score = 0;
+  const level = 0;
   /*
   if(errors.length > 0){
     res.render('login', {
@@ -40,7 +42,7 @@ usersCtrl.register = async (req, res) => {
       console.log('usuario repetido');
       res.redirect('/login');
     }else{
-    const newUser = new User({name, appe, email, username, password});
+    const newUser = new User({name, appe, email, username, password, score, level});
     newUser.password = await newUser.encryptPassword(password);
 
     if(roles) {
@@ -135,7 +137,10 @@ usersCtrl.actualizar = async (req, res) => {
 }
 
 usersCtrl.findUser = async (req, res) => {
-  const usuarios = await User.find({roles:"62813ced2a6db0a60ee34690"});
+  const role = await Role.findOne({name: "user"})
+  const roleusers = [role._id];
+
+  const usuarios = await User.find({roles:roleusers});
   res.render('tablausers', { usuarios });
 }
 

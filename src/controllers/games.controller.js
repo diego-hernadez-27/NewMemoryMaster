@@ -64,4 +64,22 @@ gamesCtrl.renderSimonDificil = ('/games/visual/Simon/simondificil', (req, res) =
   res.render('games/visual/Simon/simondificil')
 });
 
+gamesCtrl.subirScore = () => {
+
+  alert("Hola Mundo");
+  /*const {id, score} = req.body;
+
+  const scoresub = score;
+
+  scoresub = scoresub + 1;
+
+  User.findByIdAndUpdate(id, {scoresub}, (error, user) =>{
+    if(error){
+        return res.redirect('/editarperfil')
+    }
+    res.redirect('/perfil')
+  });*/
+}
+
+
 module.exports = gamesCtrl;

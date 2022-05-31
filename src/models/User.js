@@ -7,6 +7,8 @@ const UserSchema = new Schema({
   email: {type: String, required: [true, 'El email es necesario'], unique: true},
   username: {type: String, required: [true, 'El nombre de usuario es necesario'], unique: true},
   password: {type: String, required: [true, 'El password es necesario']},
+  score: {type: Number},
+  level: {type: Number},
   roles: [{
     ref: "Role",
     type: Schema.Types.ObjectId,

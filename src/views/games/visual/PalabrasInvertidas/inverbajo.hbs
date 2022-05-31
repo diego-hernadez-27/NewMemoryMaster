@@ -9,6 +9,8 @@
             </div>
         </nav>
 
+
+
         <section class="banner contenedor">
         <div>
             <div class="columns">
@@ -16,6 +18,11 @@
                     <form onsubmit="comprobar();event.preventDefault()" action="">
                         <div class="form-group">
                             <h1>Adivina la palabra</h1>
+                            <br>
+                            <form>
+                              <input type="number" name="score" id="score" value="{{user.score}}" readonly>
+                              <input type="text" name="id" id="id" value="{{user.id}}" readonly>
+                            </form>
                             <br>
                             <p>Tienes <span id="intentos">3</span> intentos</p>
                             <br>
