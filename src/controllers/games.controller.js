@@ -64,10 +64,10 @@ gamesCtrl.renderSimonDificil = ('/games/visual/Simon/simondificil', (req, res) =
   res.render('games/visual/Simon/simondificil')
 });
 
-gamesCtrl.subirScore = () => {
+/*gamesCtrl.subirScore = () => {
 
   alert("Hola Mundo");
-  /*const {id, score} = req.body;
+  const {id, score} = req.body;
 
   const scoresub = score;
 
@@ -78,8 +78,8 @@ gamesCtrl.subirScore = () => {
         return res.redirect('/editarperfil')
     }
     res.redirect('/perfil')
-  });*/
-}
+  });
+}*/
 
 
 module.exports = gamesCtrl;

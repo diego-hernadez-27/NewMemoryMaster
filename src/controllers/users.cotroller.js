@@ -103,12 +103,6 @@ usersCtrl.adminregister = async (req, res) => {
     const savedUser = await newUser.save();
     console.log(savedUser)
 
-    /*const token = jwt.sign({id: savedUser._id}, `${SECRET}`, {
-      expiresIn: 86400
-    })
-
-    console.log({token});*/
-
     //Escribir un mensaje de registro satisfactorio, porfas de usuario
     console.log('registro satisfactorio');
     res.redirect('/login');
